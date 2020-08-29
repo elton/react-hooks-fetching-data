@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import useDataApi from "./api/useDataApi";
+import Hits from "./components/hits";
 
 function App() {
   const [query, setQuery] = useState("redux");
@@ -53,13 +54,11 @@ function App() {
           </svg>
         </div>
       ) : (
-        <ul className={"ml-4"}>
+        <div className={"flex flex-wrap px-2 py-4"}>
           {data.hits.map((item) => (
-            <li key={item.objectID} className={"pb-1 text-gray-800"}>
-              <a href={item.uri}>{item.title}</a>
-            </li>
+            <Hits key={item.objectID} hit={item} />
           ))}
-        </ul>
+        </div>
       )}
     </>
   );
