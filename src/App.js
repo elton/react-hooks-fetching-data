@@ -20,8 +20,7 @@ function App() {
       >
         <input
           className={
-            "h-8 w-48 border rounded border-gray-400 p-2 m-4 text-gray-600 " +
-            "outline-none focus:border-blue-500"
+            "h-8 w-48 border rounded border-gray-400 p-2 m-4 text-gray-600 outline-none focus:border-blue-500"
           }
           type="text"
           value={query}
