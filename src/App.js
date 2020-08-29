@@ -19,19 +19,30 @@ function App() {
         }}
       >
         <input
+          className={
+            "h-8 w-48 border rounded border-gray-400 p-2 m-4 text-gray-600 " +
+            "outline-none focus:border-blue-500"
+          }
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <button type="submit">Search</button>
+        <button
+          type="submit"
+          className={
+            "bg-blue-500 h-8 px-4 rounded-md text-white text-sm hover:bg-blue-700"
+          }
+        >
+          Search
+        </button>
       </form>
       {isError && <div>Something went wrong...</div>}
       {isLoading ? (
         <div>Loading</div>
       ) : (
-        <ul>
+        <ul className={"ml-4"}>
           {data.hits.map((item) => (
-            <li key={item.objectID}>
+            <li key={item.objectID} className={"pb-1 text-gray-800"}>
               <a href={item.uri}>{item.title}</a>
             </li>
           ))}
