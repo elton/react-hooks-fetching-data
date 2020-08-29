@@ -37,7 +37,21 @@ function App() {
       </form>
       {isError && <div>Something went wrong...</div>}
       {isLoading ? (
-        <div>Loading</div>
+        <div className="animate-spin h-6 w-6 text-purple-600 mx-auto mt-5">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+            />
+          </svg>
+        </div>
       ) : (
         <ul className={"ml-4"}>
           {data.hits.map((item) => (
